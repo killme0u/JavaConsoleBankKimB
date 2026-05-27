@@ -1,39 +1,37 @@
 package banking.step0202;
 
-import java.util.Scanner;
+import static banking.step0202.ICustomDefine.*;
 
 public class BankingSystemMain {
 
-	private static final int LIST_SIZE = 100;
-	static Scanner sc = new Scanner(System.in);
 	private static String menuNo;
 
 	public static void main(String[] args) {
-		AccountManager.accounts = new Account[LIST_SIZE];
+		AccountManager.accounts = new Account[AccountManager.LIST_SIZE];
 		boolean isContinue = true;
 		while (isContinue) {
 			showMenu();
 			System.out.print("선택: ");
-			menuNo = sc.nextLine();
+			menuNo = AccountManager.sc.nextLine();
 
 			switch (menuNo) {
-			case "1":
+			case MAKE:
 				// 계좌 개설
 				AccountManager.makeAccount();
 				break;
-			case "2":
+			case DEPOSIT:
 				// 입금
 				AccountManager.depositMoneny();
 				break;
-			case "3":
+			case WITHDRAW:
 				// 출금
 				AccountManager.withdrawMoneny();
 				break;
-			case "4":
+			case INQUIRE:
 				// 계좌 정보 출력
 				AccountManager.showAccInfo();
 				break;
-			case "5":
+			case EXIT:
 				isContinue = false;
 				break;
 
@@ -51,7 +49,7 @@ public class BankingSystemMain {
 3. 출 금
 4. 계좌 정보 출력
 5. 프로그램 종료
-								""";
+""";
 		System.out.printf("%s\n", menuShow);
 	}
 

@@ -5,6 +5,7 @@ public class AccountManager {
 	static Account[] accounts;
 	static int numOfAccount = 0;
 
+	// 계좌 개설
 	static void makeAccount() {
 		System.out.println("**** 신규 계좌 개설 ****");
 		System.out.print("계좌번호: ");
@@ -40,7 +41,7 @@ public class AccountManager {
 		String accountNo = BankingSystemMain.sc.nextLine();
 		System.out.print("입금액: ");
 		String depositMoney = BankingSystemMain.sc.nextLine();
-	
+
 		Account account;
 		// 해당 계좌번호의 객체를 불러온다.
 		for (int i = 0; i < numOfAccount; i++) {
@@ -51,7 +52,7 @@ public class AccountManager {
 				break;
 			}
 		}
-	
+
 		showAccInfo();
 	}
 
@@ -62,7 +63,7 @@ public class AccountManager {
 		String accountNo = BankingSystemMain.sc.nextLine();
 		System.out.print("출금액: ");
 		String withdrawMoney = BankingSystemMain.sc.nextLine();
-	
+
 		Account account;
 		// 해당 계좌번호의 객체를 불러온다.
 		for (int i = 0; i < numOfAccount; i++) {
@@ -73,7 +74,7 @@ public class AccountManager {
 				break;
 			}
 		}
-	
+
 		showAccInfo();
 	}
 
