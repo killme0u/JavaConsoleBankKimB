@@ -9,6 +9,7 @@ public class BankingSystemMain {
 	static Scanner sc = new Scanner(System.in);
 	private static String menuNo;
 
+	// github 연동
 	public static void main(String[] args) {
 		AccountManager.accounts = new Account[LIST_SIZE];
 		boolean isContinue = true;
