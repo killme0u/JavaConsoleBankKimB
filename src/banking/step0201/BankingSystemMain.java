@@ -10,6 +10,7 @@ public class BankingSystemMain {
 	private static String menuNo;
 
 	// github 연동
+	// 연동 완료 후 커밋 & 푸시
 	public static void main(String[] args) {
 		AccountManager.accounts = new Account[LIST_SIZE];
 		boolean isContinue = true;
