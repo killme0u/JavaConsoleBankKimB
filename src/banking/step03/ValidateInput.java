@@ -72,9 +72,14 @@ public class ValidateInput {
 				throw new CurrencyException(withdraw, NOT_MINUS_WITHDRAW);
 			}
 			// 출금액보다 잔고가 많은지 유효성 검사
-			if (withdrawAmount < currentBalance) {
+			if (withdrawAmount > currentBalance) {
 				errorCode = INSUFFICIENT_BALANCE;
 				throw new CurrencyException(withdraw, INSUFFICIENT_BALANCE);
+			}
+			// 출금 가능한 단위 검사
+			if (withdrawAmount % 1000 != 0) {
+				errorCode = NOT_VALID_WITHDRAW_UNIT;
+				throw new CurrencyException(withdraw, NOT_VALID_WITHDRAW_UNIT);
 			}
 		} catch (CurrencyException e) {
 			showErrorMessage(e);

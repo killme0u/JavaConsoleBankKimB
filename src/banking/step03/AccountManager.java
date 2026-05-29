@@ -114,7 +114,8 @@ public class AccountManager {
 				break;
 			} else if (errorCode == NOT_VALID_DEPOSIT_UNIT) {
 				System.out.println("1000, 1500원 형식으로 500원 단위로 입금이 가능합니다.");
-				break;
+				System.out.print("입금액: ");
+				depositMoney = sc.nextLine().trim();
 			} else {
 				System.out.print("입금액: ");
 				depositMoney = sc.nextLine().trim();
@@ -154,9 +155,10 @@ public class AccountManager {
 			ErrorCode errorCode = validateWithdraw(withdrawMoney, currentBalance);
 			if (errorCode == SUCCESS) {
 				break;
-			} else if (errorCode == ErrorCode.NOT_VALID_WITHDRAW_UNIT) {
+			} else if (errorCode == NOT_VALID_WITHDRAW_UNIT) {
 				System.out.println("1000, 2000원 형식으로 1000원 단위로 출금이 가능합니다.");
-				break;
+				System.out.print("출금액: ");
+				withdrawMoney = sc.nextLine().trim();
 			} else if (errorCode == INSUFFICIENT_BALANCE) {
 				System.out.print("금액 전체를 출금할까요? ");
 				isWithdrawAll = sc.nextLine().trim();
