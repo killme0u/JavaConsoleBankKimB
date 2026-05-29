@@ -9,10 +9,10 @@ public class BankingSystemMain {
 	static Scanner sc = new Scanner(System.in);
 	private static String menuNo;
 
-	// github 연동
-	// 연동 완료 후 커밋 & 푸시
-	// github clone 작업 성공
-	// 학원에서 pull 없이 작업함
+	// 1. github 연동
+	// 2. 연동 완료 후 커밋 & 푸시
+	// 3. github clone 작업 성공
+	// 4. 학원에서 pull 없이 작업함
 	public static void main(String[] args) {
 		AccountManager.accounts = new Account[LIST_SIZE];
 		boolean isContinue = true;
